@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #1c1f2f;
+}
+.head{
+    font-size: 60px;
+    color: rgb(253, 253, 253);
+    text-align: center;
+    margin-bottom: 50px;
+    font-family: 'Vujahday Script', cursive;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+}
+.container{
+    position: relative;
+    transform: translateY(-100%);
+}
+.container::before{
+    content: '';
+    width: 200px;
+    height: 200px;
+    background: #fff;
+    position: absolute;
+    top: 200px;
+    border-radius: 50%;
+    animation: over 4s ease-in-out infinite;
+}
+@keyframes over 
+{
+    0%{
+        transform: translateX(35px) 
+    }
+    50%{
+        transform: translateX(-15px) 
+    }
+    100%{
+        transform: translateX(35px) 
+    }
+}
+.container .loader{
+    position: relative;
+    width: 200px;
+    height: 200px;
+   /* background: #f00;*/
+   animation: sa 4s ease-in-out infinite;
+}
+@keyframes sa
+{
+    0%{
+        transform: rotate(50deg);
+    }
+    50%{
+        transform: rotate(-50deg);
+    }
+    100%{
+        transform: rotate(50deg);
+    }
+}
+.container .loader::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 200px;
+    height: 100px;
+    background: #06c8f0;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+.container .loader .ball{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: -15px;
+    background: #fff;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-100%);
+    animation: animateBall 4s ease-in-out infinite;
+}
+@keyframes animateBall
+{
+    0%
+    {
+        transform: translateY(-100%) translateX(-30px);
+    }
+    50%
+    {
+        transform: translateY(-100%) translateX(200px);
+    }
+    100%
+    {
+        transform: translateY(-100%) translateX(-30px);
+    }
+}
